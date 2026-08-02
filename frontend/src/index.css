@@ -1,0 +1,176 @@
+/* DO NOT CHANGE */
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+/* DO NOT CHANGE */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Artville custom theme tokens */
+  --color-burgundy: #6B1A2A;
+  --color-burgundy-light: #8B2A3E;
+  --color-burgundy-dark: #4A0F1C;
+  --color-beige: #F5F0E8;
+  --color-beige-dark: #E8E0D0;
+  --color-gold: #C9A84C;
+  --color-gold-light: #D4BC6A;
+  --color-gold-dark: #A88A30;
+  --color-charcoal: #2C2C2C;
+  --color-charcoal-light: #4A4A4A;
+  --color-cream: #FAF5EF;
+  --color-warm-white: #FDFBF7;
+}
+
+/* Artville brand theme: warm, elegant, artistic */
+:root {
+  --radius: 0.75rem;
+  --background: #FDFBF7;
+  --foreground: #2C2C2C;
+  --card: #FFFFFF;
+  --card-foreground: #2C2C2C;
+  --popover: #FFFFFF;
+  --popover-foreground: #2C2C2C;
+  --primary: #6B1A2A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5F0E8;
+  --secondary-foreground: #2C2C2C;
+  --muted: #F5F0E8;
+  --muted-foreground: #6B7280;
+  --accent: #C9A84C;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --border: #E8E0D0;
+  --input: #E8E0D0;
+  --ring: #C9A84C;
+  --chart-1: #6B1A2A;
+  --chart-2: #C9A84C;
+  --chart-3: #8B2A3E;
+  --chart-4: #F5F0E8;
+  --chart-5: #D4BC6A;
+  --sidebar: #FDFBF7;
+  --sidebar-foreground: #2C2C2C;
+  --sidebar-primary: #6B1A2A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F5F0E8;
+  --sidebar-accent-foreground: #2C2C2C;
+  --sidebar-border: #E8E0D0;
+  --sidebar-ring: #C9A84C;
+}
+
+.dark {
+  --background: #1A1A1A;
+  --foreground: #F0EDE8;
+  --card: #2A2A2A;
+  --card-foreground: #F0EDE8;
+  --popover: #2A2A2A;
+  --popover-foreground: #F0EDE8;
+  --primary: #A03A4E;
+  --primary-foreground: #FFFFFF;
+  --secondary: #3A3028;
+  --secondary-foreground: #F0EDE8;
+  --muted: #3A3028;
+  --muted-foreground: #9CA3AF;
+  --accent: #C9A84C;
+  --accent-foreground: #1A1A1A;
+  --destructive: #EF4444;
+  --border: #3A3028;
+  --input: #3A3028;
+  --ring: #C9A84C;
+  --chart-1: #A03A4E;
+  --chart-2: #C9A84C;
+  --chart-3: #8B2A3E;
+  --chart-4: #4A3020;
+  --chart-5: #D4BC6A;
+  --sidebar: #2A2A2A;
+  --sidebar-foreground: #F0EDE8;
+  --sidebar-primary: #A03A4E;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #3A3028;
+  --sidebar-accent-foreground: #F0EDE8;
+  --sidebar-border: #3A3028;
+  --sidebar-ring: #C9A84C;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  button:not([disabled]),
+  [role="button"]:not([disabled]) {
+    cursor: pointer;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  .font-body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F0E8;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A84C;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A88A30;
+}
+
+/* Selection color */
+::selection {
+  background-color: #6B1A2A;
+  color: #FFFFFF;
+}
