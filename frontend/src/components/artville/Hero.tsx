@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Eye, MessageCircle } from "lucide-react";
 import { business } from "@/data/business";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg.webp";
 
 export default function Hero() {
   const scrollTo = (id: string) => {
@@ -18,8 +18,10 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url(${heroBg})`,
-        }}
+  backgroundImage: `url(${heroBg})`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+}}
       >
         {/* Dark cinematic overlay */}
         <div className="absolute inset-0 bg-[#22070B]/65" />
